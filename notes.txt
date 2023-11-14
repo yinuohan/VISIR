@@ -3,6 +3,8 @@ def gaussian(x, A, mu, sigma):
     return A * np.exp( - (x - mu)**2 / (2 * sigma**2) )
 err = fitted background noise per pixel.
 background_noise = measured background noise per pixel from a patch of image that looks empty. This is not a free parameter when running the MCMC. 
+Position angle assumed = 87 deg = fixed.
+Inclination assumed = 50 deg = fixed.
 
 B10.7
 For this one sharing the stellar flux with a closer-in disk component seems to be preferred over a star at the centre plus a further out narrow ring. The latter is preferred in most other filters. When I force the disk component to be further out, you don't get a bad fit, but it still wants to come back in for the Gaussian ring to peak closer to the star. Since we're just trying to get *a* model that works so we can model the JWST images, I thought we may as well go for the one which minimises the residuals the best, so I stopped trying to force the ring to be further out. 
