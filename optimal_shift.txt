@@ -1,0 +1,15 @@
+These are how much each image of HD 141569 is shifted by in the (x, y) directions in pixels before I performed the fitting.
+They were shifted because the star did not appear to be perfectly centred. 
+They were shifted such that the star is centred on the geometric centre of the grid of pixels in the image, i.e. for an odd number of pixels the star would be centred on the middle of the central pixel, and for an even number of pixels the star would be centred on the intersection between the central pixels. 
+Each VISIR pixel is 0.045 arcsec I believe. 
+PSFs were also shifted to be properly centred (by an amount which I did not record here, but can make available if needed).
+
+B9.7: (0.1, -0.3)
+
+B10.7: (0.5, -0.3)
+
+B12.4: (0.0, 0.0)
+
+PAH1: (0.2, -0.6)
+
+PAH2: (0.3, -0.3)

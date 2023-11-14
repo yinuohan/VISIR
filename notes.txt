@@ -1,0 +1,14 @@
+Functional parameters:
+def gaussian(x, A, mu, sigma):
+    return A * np.exp( - (x - mu)**2 / (2 * sigma**2) )
+err = fitted background noise per pixel.
+background_noise = measured background noise per pixel from a patch of image that looks empty. This is not a free parameter when running the MCMC. 
+
+B10.7
+For this one sharing the stellar flux with a closer-in disk component seems to be preferred over a star at the centre plus a further out narrow ring. The latter is preferred in most other filters. When I force the disk component to be further out, you don't get a bad fit, but it still wants to come back in for the Gaussian ring to peak closer to the star. Since we're just trying to get *a* model that works so we can model the JWST images, I thought we may as well go for the one which minimises the residuals the best, so I stopped trying to force the ring to be further out. 
+
+B12.4
+For this one the posterior distribution looks a bit bimodal. One solution is like the case of B10.7 with the Gaussian ring peaking closer to the star, and the other is more like the other filters with the Gaussian ring further out. The median of everything gives okay residuals, so maybe this means the median is an okay model for our purposes. 
+
+PAH1
+For this one the residuals leave a lot of asymmetric features, but I wonder if the PSF was just unstable for this observation since the rotationally self-subtracted image (observation - itself rotated by 180 degrees about the star) also gives similar significant residual structures even after being optimised/corrected for centring offset with a grid search. Maybe this unstable PSF makes it even harder to model the observation with the PSF observation, leaving these residuals. The MCMC chains look like they've converged. 
